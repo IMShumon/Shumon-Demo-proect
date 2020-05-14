@@ -1,0 +1,14 @@
+version: '3'
+services:
+  server:
+    build: 'server'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+  db:
+    build: 'mysql'
+    environment:
+      POSTGRES_DB: mysql
+      POSTGRES_USER: mysql
+      POSTGRES_PASSWORD: mysql
